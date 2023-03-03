@@ -125,13 +125,23 @@ var database = [
 // task7(name)
 
 // 7. search in all object if any value matched return all object
-var name = "abc";
+var name = "a";
 task7 = (data) => {
-  let stateGujarat = database.filter(
-    (d, i) => Object.values(d) === typeof String
-  );
-  console.log(stateGujarat);
+  // let stateGujarat =
+  return database.filter((d, i) => {
+    return Object.values(d).find(
+      (str) => typeof str === "string" && str.includes(data)
+    );
+  });
+
+  // console.log(stateGujarat);
 };
-task7(name);
+console.log(task7(name));
+
+// let string = "a";
+// const task8 = (data) => {
+//   return database.filter((d) => d.firstName.includes(data));
+// };
+// console.log(task8(string));
 
 // note : if data not found return "data not found"
